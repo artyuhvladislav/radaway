@@ -56,6 +56,13 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.(png|gif|jpe?g|svg)$/i,
+        type: 'asset',
+        generator: {
+          filename: 'src/assets/images/[name].[hash:6][ext]',
+        },
+      },
     ],
   },
   devtool: isDev ? 'source-map' : false,
@@ -78,6 +85,14 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/favicon.ico'),
           to: path.resolve(__dirname, 'dist'),
+        },
+        {
+          from: path.resolve(__dirname, 'src/assets', 'images'),
+          to: path.resolve(__dirname, 'dist/assets', 'images'),
+          toType: 'dir',
+          globOptions: {
+            ignore: ['*.DS_Store', 'Thumbs.db'],
+          },
         },
       ],
     }),

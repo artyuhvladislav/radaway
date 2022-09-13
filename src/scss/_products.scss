@@ -1,0 +1,137 @@
+.products {
+    padding: 30px 0;
+
+    &-row {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 40px;
+        margin-bottom: 30px;
+        color: var(--white);
+    }
+
+    &__title {
+        position: absolute;
+        left: calc(-100vw/2 + 50%);
+        width: calc(100vw/2 + 20%);
+        background: var(--accent-gray-color);
+        height: 100%;
+        text-align: center;
+        margin-right: 20px;
+
+        &-text {
+            position: absolute;
+            right: 620px;
+            font-size: 1.7rem;
+            padding: 30px 0 30px;
+
+        }
+    }
+
+    &__btn {
+        max-width: 400px;
+        margin-left: auto;
+        padding: 30px;
+        font-size: 1.7rem;
+        background: var(--accent-green-color);
+        color: var(--white);
+        transition: ease-in-out 0.2s;
+
+        &:hover {
+            background: var(--accent-gray-color);
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+
+        &-item {
+            max-width: 30%;
+        }
+
+        &-img {
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+
+        &-title {
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: var(--accent-green-color);
+            font-size: 1.2rem;
+        }
+
+        &-text {
+            color: var(--gray);
+        }
+    }
+}
+
+@media screen and (max-width: 1270px) {
+    .products {
+
+        &__title {
+            width: calc(100vw/2 + 10%);
+
+            &-text {
+                right: 100px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .products {
+        padding: 30px 0;
+
+        &-row {
+            position: static;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        &__title {
+            position: static;
+            width: 100%;
+            margin-right: 0;
+
+            &-text {
+                font-size: 1rem;
+                position: static;
+            }
+        }
+
+        &__btn {
+            margin-left: 0;
+            width: 100%;
+            max-width: 100%;
+            font-size: 1rem;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            &-item {
+                max-width: 100%;
+                margin-bottom: 40px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &-title {
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+
+            &-img {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

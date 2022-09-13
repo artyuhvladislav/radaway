@@ -1,0 +1,136 @@
+.header {
+    background: var(--header-bg);
+
+    &-top {
+        padding: 20px 0;
+
+        &>.container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__logo {
+            display: block;
+
+            &-img {
+                width: 200px;
+            }
+        }
+
+        &__info {
+            color: var(--gray);
+            padding-right: 5px;
+            border-right: 1px solid var(--gray);
+
+            &-text {
+                margin-bottom: 5px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &-bottom {
+        background: var(--header-bottom-gradient);
+
+        &>.container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 20px;
+            height: 50px;
+        }
+
+        &__nav {
+            flex-grow: 2;
+            height: 100%;
+            background: var(--accent-green-color);
+
+            &-list {
+                display: flex;
+                height: 100%;
+            }
+
+            &-item {
+                height: 100%;
+            }
+
+            &-link {
+                display: flex;
+                height: 100%;
+                align-items: center;
+                padding: 20px;
+                color: var(--white);
+                text-transform: capitalize;
+                transition: ease-in-out 0.2s;
+
+                &:hover {
+                    background: var(--accent-gray-color);
+                }
+
+                &-active {
+                    background: var(--accent-gray-color);
+                }
+            }
+        }
+
+        &__search {
+            height: 100%;
+            flex-grow: 1;
+            position: relative;
+            background: var(--accent-gray-color);
+
+            &-input {
+                background: var(--accent-gray-color);
+                color: var(--white);
+                padding: 20px;
+                display: block;
+                height: 100%;
+
+                &::placeholder {
+                    color: var(--white);
+                    font-style: italic;
+                }
+            }
+
+            &-btn {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+
+            }
+
+            &-img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+.link-active {
+    background: var(--accent-gray-color);
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        &-bottom {
+
+            &>.container {
+                margin-bottom: 50px;
+            }
+
+            &__search {
+
+                &-btn {
+                    right: 20px;
+                }
+            }
+        }
+    }
+}
